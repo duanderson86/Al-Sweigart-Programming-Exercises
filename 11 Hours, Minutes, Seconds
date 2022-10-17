@@ -1,0 +1,44 @@
+
+
+def getHoursMinutesSeconds(totalSeconds):
+    hours = 0
+    minutes = 0
+    seconds = 0
+    output = []
+    if totalSeconds == 0:
+        return '0s'
+    while totalSeconds >= 3600:
+        hours += 1
+        totalSeconds -= 3600
+    if hours > 0:
+        output.append("{}h".format(hours))
+    while totalSeconds >= 60:
+        minutes += 1
+        totalSeconds -= 60
+    if minutes > 0:
+        output.append("{}m".format(minutes))   
+    while totalSeconds > 0:
+        seconds += 1
+        totalSeconds -= 1
+    if seconds > 0:
+        output.append("{}s".format(seconds))
+    return " ".join(output)
+
+
+assert getHoursMinutesSeconds(30) == '30s'
+
+assert getHoursMinutesSeconds(60) == '1m'
+
+assert getHoursMinutesSeconds(90) == '1m 30s'
+
+assert getHoursMinutesSeconds(3600) == '1h'
+
+assert getHoursMinutesSeconds(3601) == '1h 1s'
+
+assert getHoursMinutesSeconds(3661) == '1h 1m 1s'
+
+assert getHoursMinutesSeconds(90042) == '25h 42s'
+
+assert getHoursMinutesSeconds(0) == '0s'
+
+print("No Problems Found!")

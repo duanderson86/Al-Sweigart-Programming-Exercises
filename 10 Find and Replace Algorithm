@@ -1,0 +1,21 @@
+
+def findAndReplace(text,oldText,newText):
+    while oldText in text:
+        index_pos = text.index(oldText[:1]) # find the start of the text to replace
+        #creates new string that is a combination of all text before oldtext+newtext+ all text after oldtext
+        replaced_text = text[:index_pos] + newText + text[index_pos+len(newText):]
+        #binds text to the new replaced text string to prepare for new loop
+        text = replaced_text        
+    return replaced_text        
+
+assert findAndReplace('The fox', 'fox', 'dog') == 'The dog'
+
+assert findAndReplace('fox', 'fox', 'dog') == 'dog'
+
+assert findAndReplace('Firefox', 'fox', 'dog') == 'Firedog'
+
+assert findAndReplace('foxfox', 'fox', 'dog') == 'dogdog'
+
+assert findAndReplace('The Fox and fox.', 'fox', 'dog') == 'The Fox and dog.'
+
+print("No Problems Found!")

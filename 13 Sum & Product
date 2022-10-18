@@ -1,14 +1,14 @@
 def calculateSum(numbers):
-    sum = 0
+    sum_total = 0
     for num in numbers:
-        sum += num
-    return sum
+        sum_total += num
+    return sum_total
 
 def calculateProduct(numbers):
-    prod = 1
+    prod_total = 1
     for num in numbers:
-        prod *= num
-    return prod
+        prod_total *= num
+    return prod_total
 
 assert calculateSum([]) == 0
 

@@ -1,0 +1,36 @@
+for num in range(int(input("How many bottles would you like to start with?")), 0, -1):
+    
+    if num > 2:
+        print('''{0} bottles of beer on the wall,
+
+{0} bottles of beer,
+
+Take one down,
+
+Pass it around,
+
+{1} bottles of beer on the wall,
+'''.format(num,num-1))
+    if num == 2: #Switches to version specific to 2 beers left
+        print('''{0} bottles of beer on the wall,
+
+{0} bottles of beer,
+
+Take one down,
+
+Pass it around,
+
+{1} bottle of beer on the wall,
+'''.format(num,num-1))
+    if num == 1: #Switches to version specific to last beer, and does send off
+        print('''{0} bottle of beer on the wall,
+
+{0} bottle of beer,
+
+Take one down,
+
+Pass it around,
+
+No more bottles of beer on the wall!!
+'''.format(num,num-1))
+

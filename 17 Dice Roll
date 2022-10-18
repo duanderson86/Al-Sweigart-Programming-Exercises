@@ -1,9 +1,7 @@
 import random
 
 def rollDice(numberOfDice):
-    if numberOfDice == 0:
-        return 0
-    return numberOfDice*(random.randint(1,6))
+    return random.randint(numberOfDice,numberOfDice*6)
 
 assert rollDice(0) == 0
 

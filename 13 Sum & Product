@@ -1,0 +1,21 @@
+def calculateSum(numbers):
+    sum = 0
+    for num in numbers:
+        sum += num
+    return sum
+
+def calculateProduct(numbers):
+    prod = 1
+    for num in numbers:
+        prod *= num
+    return prod
+
+assert calculateSum([]) == 0
+
+assert calculateSum([2, 4, 6, 8, 10]) == 30
+
+assert calculateProduct([]) == 1
+
+assert calculateProduct([2, 4, 6, 8, 10]) == 3840
+
+print("No Problems Found!")

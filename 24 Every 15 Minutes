@@ -1,0 +1,25 @@
+import random
+
+clock = {'h':12,
+         'm':00,
+         'o':'am'
+         }
+output = ''
+
+while output != '11:45 pm':
+    output = "{}:{} {}".format(clock['h'], str(clock['m']).zfill(2), clock['o'])
+    print(output)
+    clock['m'] += 15
+    if clock['m'] == 60:
+        clock['m'] -= 60
+        clock['h'] += 1
+        if clock['h'] > 12:
+            clock['h'] -= 12
+        if clock['h'] == 12 and clock['o'] == 'am':
+            clock['o'] = 'pm'
+
+print(output)
+
+
+
+

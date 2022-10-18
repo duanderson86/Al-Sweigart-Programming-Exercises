@@ -1,0 +1,19 @@
+def writeToFile(filename,text):
+    with open(filename, 'w') as fileobj:
+        fileobj.write(text)
+
+
+def appendToFile(filename,text):
+    with open(filename, 'a') as fileobj:
+        fileobj.write(text)
+
+
+def readFromFile(filename):
+    with open(filename, 'r') as fileobj:
+        return fileobj.read()
+        
+writeToFile('greet.txt', 'Hello!\n')
+
+appendToFile('greet.txt', 'Goodbye!\n')
+
+print(readFromFile('greet.txt') == 'Hello!\nGoodbye!\n')

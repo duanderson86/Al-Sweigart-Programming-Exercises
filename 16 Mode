@@ -1,0 +1,32 @@
+def mode(numbers):
+    if numbers == []:
+        return None
+    num_count = {}
+    for num in numbers:
+        if num not in num_count:
+            num_count[num] = 0
+        num_count[num] += 1
+    high_count = max(num_count.values())
+    for key, value in num_count.items():
+        if value == high_count:
+            return key
+
+assert mode([]) == None
+
+assert mode([1, 2, 3, 4, 4]) == 4
+
+assert mode([1, 1, 2, 3, 4]) == 1
+
+import random
+
+random.seed(42)
+
+testData = [1, 2, 3, 4, 4]
+
+for i in range(1000):
+
+    random.shuffle(testData)
+
+    assert mode(testData) == 4
+    
+print("No Problems Found!")

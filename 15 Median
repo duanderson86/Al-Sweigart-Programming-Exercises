@@ -1,0 +1,33 @@
+def median(numbers):
+    if numbers == []:
+        return None
+    numbers.sort()
+    half_slice = len(numbers)//2
+    if len(numbers) % 2 == 0: #if even # of items, returns two middle numbers then returns average
+        median_nums = numbers[(half_slice-1):(-1*half_slice+1)]
+        return sum(median_nums)/2
+    else: #if odd # of items, this path finds and returns middle #
+        median_num = numbers[(half_slice):(-1*half_slice)] 
+        return median_num[0]
+
+assert median([]) == None
+
+assert median([1, 2, 3, 2]) == 2
+
+assert median([3, 7, 10, 4, 1, 9, 6, 5, 2, 8]) == 5.5
+
+assert median([3, 7, 10, 4, 1, 9, 6, 2, 8]) == 6
+
+import random
+
+random.seed(42)
+
+testData = [3, 7, 10, 4, 1, 9, 6, 2, 8]
+
+for i in range(1000):
+
+    random.shuffle(testData)
+
+    assert median(testData) == 6
+    
+print("No Problems Found!")

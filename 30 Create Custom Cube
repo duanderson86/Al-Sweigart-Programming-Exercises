@@ -1,0 +1,16 @@
+while True:
+    def drawBox(size):
+        print(' '*(1+size) + '+' + '-'*(2*size) + '+') #Prints top line of cube
+        for i in range(size,0,-1): #Prints upward-facing side and half of right-facing
+            print(' '*(i) + '/' + ' '*(size*2) + '/' + ' '*(size-i) + '|')
+        print('+' + '-'*(2*size) + '+' + ' '*size + '+')#Prints midline edge
+        for i in range(size, 0,-1): #Prints front face and remaining half of right-facing side
+            print('|'+' '*(2*size) + '|' + ' '*(i-1) + '/')
+        print('+' + '-'*(2*size) + '+') #Prints last line of cube/edge
+
+    drawBox(int(input("Set a size for the cube")))
+    
+    
+
+
+

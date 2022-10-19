@@ -1,0 +1,25 @@
+def printHandshakes(names):
+    numberOfHandshakes = 0
+    unshaken = names.copy()
+    for pers in names:
+        while len(unshaken) > 1:
+            for i in range(1,len(unshaken)):
+                print("{} shakes hands with {}".format(unshaken[0], unshaken[i]))
+                numberOfHandshakes += 1
+            unshaken.remove(unshaken[0])    
+    print("\nAltogether, they shake hands {} times".format(numberOfHandshakes))
+    return numberOfHandshakes
+
+print("\nAlice and Bob meet each other\n")
+
+assert printHandshakes(['Alice', 'Bob']) == 1
+
+print("\nAlice, Bob, and Carol meet each other\n")
+
+assert printHandshakes(['Alice', 'Bob', 'Carol']) == 3
+
+print("\nAlice, Bob, Carol, and David meet each other\n")
+
+assert printHandshakes(['Alice', 'Bob', 'Carol', 'David']) == 6
+
+print("No Problems Found!")

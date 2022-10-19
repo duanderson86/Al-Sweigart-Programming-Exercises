@@ -1,0 +1,8 @@
+def drawPyramid(height):
+    width = height*2-1
+    for i in range(1,height+1): #Loop that will draw pyramid
+        pyr_width = 1+(2*(i-1)) #Calcs how wide pyramid will be at each height
+        white_space = (width-pyr_width)//2 # calcs size of white space on each side
+        print(" "*(white_space) + "#"*pyr_width + " "*(white_space))
+              
+drawPyramid(8)

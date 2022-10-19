@@ -1,0 +1,7 @@
+def drawBorder(width,height):
+    print('+' + '-'*(width-2) + '+') #Prints top border
+    for h in range(2, height): #in-fills the middle side borders
+        print('|' + ' '*(width-2) + '|')
+    print('+' + '-'*(width-2) + '+') #Prints bottom border
+    
+drawBorder(20,10)

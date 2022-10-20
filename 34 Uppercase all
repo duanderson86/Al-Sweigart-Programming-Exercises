@@ -1,0 +1,32 @@
+# The code used to create alpha_dict below:
+# for i in range(65, 91):
+#     alpha_dict[chr(i+32)] = chr(i)
+
+alpha_dict = {'a': 'A', 'b': 'B', 'c': 'C', 'd': 'D', 'e': 'E', 'f': 'F', 'g': 'G', 'h': 'H', 'i': 'I', 'j': 'J', 'k': 'K', 'l': 'L', 'm': 'M', 'n': 'N', 'o': 'O', 'p': 'P', 'q': 'Q', 'r': 'R', 's': 'S', 't': 'T', 'u': 'U', 'v': 'V', 'w': 'W', 'x': 'X', 'y': 'Y', 'z': 'Z'}
+
+def getUppercase(text): 
+    for pair in alpha_dict: #Goes through entire alphabet replacing any lowercase
+        text = text.replace(str(pair), alpha_dict[pair])
+    return text ###TODO likely faster to look up ASCII val of each letter in string
+                   ###using ord() then subtracting 32 if in range 97-123
+
+getUppercase("heLLo goodBye 123!!! 456 AbcdEfG")
+ 
+assert getUppercase('Hello') == 'HELLO'
+ 
+assert getUppercase('hello') == 'HELLO'
+
+assert getUppercase('HELLO') == 'HELLO'
+
+assert getUppercase('Hello, world!') == 'HELLO, WORLD!'
+
+assert getUppercase('goodbye 123!') == 'GOODBYE 123!'
+
+assert getUppercase('12345') == '12345'
+
+assert getUppercase('') == ''
+
+print("No Problems Found!")
+
+
+

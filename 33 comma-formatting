@@ -1,0 +1,43 @@
+def commaFormat(number):
+    str_num = str(number)
+    output_str = ''
+    neg_holder = ''
+    if '-' in str_num: 
+        neg_holder = '-' 
+        str_num = str_num[1:] #removes '-' sign
+    if '.' in str_num: #detects if floating point 
+        dec_location = str_num.find('.')
+        output_str += str_num[dec_location:] #adds decimal values to output
+        str_num = str_num[:dec_location] #remove decimal portion of original string
+    while len(str_num) > 3: #if remaining numbers >3, add to output with leading ','
+        output_str = ',' + str_num[-3:] + output_str 
+        str_num = str_num[:-3] #Removes the numbers now added to output
+    
+    return (neg_holder + str_num + output_str) #adds any numbers in final grouping to front, returns
+    
+#Does not work for very long numbers due to the way python handles long numbers
+    
+for i in range(-100000, 100000):
+    assert commaFormat(i) == str(format(i, ',d'))
+
+assert commaFormat(1) == '1'
+
+assert commaFormat(10) == '10'
+
+assert commaFormat(100) == '100'
+
+assert commaFormat(1000) == '1,000'
+
+assert commaFormat(10000) == '10,000'
+
+assert commaFormat(100000) == '100,000'
+
+assert commaFormat(1000000) == '1,000,000'
+
+assert commaFormat(1234567890) == '1,234,567,890'
+
+assert commaFormat(1000.123456) == '1,000.123456'
+
+commaFormat(23453214)
+
+print("No Problems Found!")

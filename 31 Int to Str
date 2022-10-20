@@ -15,15 +15,15 @@ def convertIntToStr(integerNum):
     if integerNum < 0:
         stringnum += '-' #begins out stringerized int with negative when needed
         integerNum *= -1 #Converts negative number to positive for future work
-    integerscratch = integerNum
+    integerscratch = integerNum #makes scratchpad copy of integernum
     digitplace = 1
-    while integerscratch >= 10:
+    while integerscratch >= 10: #Calculates the number of digits in the number we're converting
         integerscratch //= 10
         digitplace += 1
-    for i in range(digitplace-1, -1, -1):
+    for i in range(digitplace-1, -1, -1): # Writes each number, starting from highest place, to string
         next_char = integerNum // (1*10**i)
         integerNum -= next_char * (1*10**i)
-        stringnum += intpairs[next_char]
+        stringnum += intpairs[next_char] #Looks up int in dictionary and places appropriate string from the lookup
     return stringnum
     
     

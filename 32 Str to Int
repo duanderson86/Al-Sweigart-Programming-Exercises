@@ -1,0 +1,30 @@
+strpairs = {'1':1,
+            '2':2,
+            '3':3,
+            '4':4,
+            '5':5,
+            '6':6,
+            '7':7,
+            '8':8,
+            '9':9,
+            '0':0
+}
+
+def convertStrToInt(stringNum):
+    is_neg = None
+    output_val = 0
+    if stringNum[:1] == '-': #Checks if negative
+        is_neg = True #sets flag for conversion to neg at end of func
+        stringNum = stringNum[1:] #removes '-' sign
+    for n in range(0,len(stringNum)): #adds each number in its proper place
+        output_val += (strpairs[stringNum[0]])*(1*10**(len(stringNum)-1))
+        stringNum = stringNum[1:]
+    if is_neg != None:
+        return output_val*-1
+    return output_val
+
+for i in range(-10000, 10000):
+
+    assert convertStrToInt(str(i)) == i
+    
+print("No Problems Found!")

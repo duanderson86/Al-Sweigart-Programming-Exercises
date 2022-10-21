@@ -1,0 +1,49 @@
+
+def getTitleCase(text):
+    char_num = 1
+    output = ''
+    for char in text:
+        if char.isalpha(): #code to handle alpha characters
+            if char_num == 1: #makes certain first letter in each alpha string is upper
+                output += char.upper()
+                char_num += 1
+            elif char_num > 1: #converts all other letters in contiguous string to lower
+                output += char.lower()
+                char_num += 1
+        else: #adds non-alpha characters to output string without change
+            output += char
+            char_num = 1
+    return output
+
+assert getTitleCase('Hello, world!') == 'Hello, World!'
+
+assert getTitleCase('HELLO') == 'Hello'
+
+assert getTitleCase('hello') == 'Hello'
+
+assert getTitleCase('hElLo') == 'Hello'
+
+assert getTitleCase('') == ''
+
+assert getTitleCase('abc123xyz') == 'Abc123Xyz'
+
+assert getTitleCase('cat dog RAT') == 'Cat Dog Rat'
+
+assert getTitleCase('cat,dog,RAT') == 'Cat,Dog,Rat'
+
+import random
+
+random.seed(42)
+
+chars = list('abcdefghijklmnopqrstuvwxyz1234567890 ,.')
+
+for i in range(1000):
+
+    random.shuffle(chars)
+
+    assert getTitleCase(''.join(chars)) == ''.join(chars).title()
+
+print("No Problems Found!")
+
+
+

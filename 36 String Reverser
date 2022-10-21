@@ -1,0 +1,21 @@
+##Super simple solution that dodges the spirit of the challenge 
+# def reverseString(text):
+#     return text[::-1]
+
+def reverseString(text):
+    output = ''
+    for i in range(len(text)-1,-1, -1): #iterates nums 
+        output += text[i]
+        text = text[:-1]
+    return output
+        
+assert reverseString('Hello') == 'olleH'
+
+assert reverseString('') == ''
+
+assert reverseString('aaazzz') == 'zzzaaa'
+
+assert reverseString('xxxx') == 'xxxx'
+
+print("No Problems Found!")
+

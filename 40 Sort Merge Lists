@@ -7,12 +7,11 @@ def mergeTwoLists(list1,list2):
         #only if list2 is less than list1, removes and places in output
         elif list2[0] < list1[0]: 
             merge_list.append(list2.pop(0))
-    #Once one list is empty this places remaining list in output        
-    while len(list1) + len(list2) > 0: 
-        if len(list1) > 0:
-            merge_list.append(list1.pop(0))
-        if len(list2) > 0:
-            merge_list.append(list2.pop(0))
+    #Once one list is empty, these place remaining items in output        
+    while len(list1) > len(list2): 
+        merge_list.append(list1.pop(0))
+    while len(list2) > len(list1):
+        merge_list.append(list2.pop(0))
     return merge_list
 
 

@@ -1,0 +1,16 @@
+def bubbleSort(numbers):
+    for entry in numbers:
+        lowest = entry
+        #Checks each following entry for lower value, swaps current entry for lowest one
+        for i in range(numbers.index(entry),len(numbers)):
+            if numbers[i] < lowest: 
+                lowest = numbers[i]
+        numbers[numbers.index(entry)], numbers[lowest] = numbers[lowest], numbers[numbers.index(entry)]    
+    return numbers   
+
+
+assert bubbleSort([2, 0, 4, 1, 3]) == [0, 1, 2, 3, 4]
+
+assert bubbleSort([2, 2, 2, 2]) == [2, 2, 2, 2]
+
+print("No Problems Found!")

@@ -1,0 +1,29 @@
+def rot13(text):
+    output = ''
+    for char in text:
+        if not char.isalpha(): #passes non-alpha characters unchanged
+            output += char
+        elif ord(char) <= 90: #converts upper case letters
+            if ord(char) <= 77:
+                output += chr(ord(char)+13)
+            else:
+                output += chr(ord(char)-13)
+        elif ord(char) >= 97: #converts lower case letters
+            if ord(char) >= 110:
+                output += chr(ord(char)-13)
+            else:
+                output += chr(ord(char)+13)
+    return output
+
+
+assert rot13('Hello, world!') == 'Uryyb, jbeyq!'
+
+assert rot13('Uryyb, jbeyq!') == 'Hello, world!'
+
+assert rot13(rot13('Hello, world!')) == 'Hello, world!'
+
+assert rot13('abcdefghijklmnopqrstuvwxyz') == 'nopqrstuvwxyzabcdefghijklm'
+
+assert rot13('ABCDEFGHIJKLMNOPQRSTUVWXYZ') == 'NOPQRSTUVWXYZABCDEFGHIJKLM'
+
+print("No Problems Found!")

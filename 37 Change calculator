@@ -1,0 +1,35 @@
+
+def makeChange(amount):
+    change_out = {}
+    if amount >= 25:
+        change_out['quarters'] = 0
+        while amount >= 25:
+            change_out['quarters'] += 1
+            amount -= 25
+    if amount >= 10:
+        change_out['dimes'] = 0
+        while amount >= 10:
+            change_out['dimes'] += 1
+            amount -= 10
+    if amount >= 5:
+        change_out['nickels'] = 0
+        while amount >= 5:
+            change_out['nickels'] += 1
+            amount -= 5
+    if amount > 0:
+        change_out['pennies'] = amount
+    
+    return change_out
+        
+
+assert makeChange(30) == {'quarters': 1, 'nickels': 1}
+
+assert makeChange(10) == {'dimes': 1}
+
+assert makeChange(57) == {'quarters': 2, 'nickels': 1, 'pennies': 2}
+
+assert makeChange(100) == {'quarters': 4}
+
+assert makeChange(125) == {'quarters': 5}
+
+print("No Problems Found!")

@@ -1,5 +1,5 @@
-#Converts English to Pig Latin
-
+#Convert English to Pig Latin
+##TODO handle trailing punctuation better
 
 def pig_latin(text):
     split_list = text.split()    
@@ -12,9 +12,8 @@ def pig_latin(text):
                 else:
                     word = word[len(scratch_pad):]
                     word = word + scratch_pad + 'ay'
-                print(word)
                 break
             scratch_pad += letter
-        print('\n\n' + word)
+        print(word, end = ' ')
 
-pig_latin(input("inputyay ethay ordway youyay antway igpay atinlayed: "))
+pig_latin(input("inputyay ethay ordway youyay antway igpay atinlayed :"))
